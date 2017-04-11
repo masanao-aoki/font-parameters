@@ -120,12 +120,12 @@ a:hover {
 
 /* _Font icon */
 @font-face {
-    font-family: 'qiita';
-    src: url('/font/qiita.eot');
-    src: url('/font/qiita.eot#iefix') format('embedded-opentype'),
-         url('/font/qiita.svg#qiita') format('svg'),
-         url('/font/qiita.woff') format('woff'),
-         url('/font/qiita.ttf') format('truetype');
+    font-family: 'font-param';
+    src: url('/font/font-param.eot');
+    src: url('/font/font-param.eot#iefix') format('embedded-opentype'),
+         url('/font/font-param.svg#font-param') format('svg'),
+         url('/font/font-param.woff') format('woff'),
+         url('/font/font-param.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
