@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+.form {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 20%;
+	padding: 2rem;
+	background: #f8f8f8;
+	box-sizing: border-box;
+}
