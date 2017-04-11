@@ -8,11 +8,11 @@
 
 .layout-box {
 	overflow: hidden;
-	position: relative;
-	height: 40rem;
-	width: 100%;
-	border-radius: .6rem;
-	border: 1px solid #ccc;
+	position: fixed;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 80%;
 	box-sizing: border-box;
 }
 
