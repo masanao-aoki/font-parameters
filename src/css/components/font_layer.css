@@ -39,6 +39,7 @@
 	left: 0;
 	width: 100%;
 	font-size: 1.4rem !important;
+	transition: height .3s;
 }
 
 .layout-box .layout-text:nth-child(odd) .layout-line-height {
