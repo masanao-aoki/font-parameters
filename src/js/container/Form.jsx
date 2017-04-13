@@ -22,38 +22,50 @@ export default class Form extends React.Component {
 
 		return (
 			<div className={styles.form}>
-				<dl>
-					<dt>font−size</dt>
-					<dd>
+				<dl className={styles.formControl}>
+					<dt className={styles.formControlTitle}>font−size</dt>
+					<dd className={styles.formControlBody}>
 						<input
+							className={styles.formControlInput}
 							type="number"
 							name="fontSize"
 							defaultValue={fontSize}
 							onChange={(e) => changeFontSizeValue(e.target.value)}
 						/>
-						<span>px</span>
+						<span
+							className={styles.formControlUnit}
+						>px</span>
 					</dd>
 				</dl>
-				<dl>
-					<dt>line-height</dt>
-					<dd>
+				<dl className={styles.formControl}>
+					<dt className={styles.formControlTitle}>line-height</dt>
+					<dd className={styles.formControlBody}>
 						<input
+							className={styles.formControlInput}
 							type="number"
 							name="lineHeight"
 							defaultValue={lineHeight}
 							onChange={(e) => changeLineHeightValue(e.target.value)}
 						/>
-						<span>px</span>
+						<span
+							className={styles.formControlUnit}
+						>px</span>
 					</dd>
 				</dl>
-				<dl>
-					<dt>text</dt>
-					<dd>
+				<dl className={styles.formControl}>
+					<dt className={styles.formControlTitle}>text</dt>
+					<dd className={
+									`${styles.formControlBody} ${styles.formControlBodyNotFlex}`
+								}>
 						<textarea
+							className={
+									`${styles.formControlInput} ${styles.formControlTextarea}`
+								}
 							name="textArea"
 							defaultValue={text}
 							onChange={(e) => changeTextArea(e.target.value)}
 						/>
+						<span className={styles.formControlAttention}>改行を行う場合は、テキスト入力枠内にて改行を行って下さい。</span>
 					</dd>
 				</dl>
 			</div>
