@@ -30,6 +30,7 @@ export default class Form extends React.Component {
 							type="number"
 							name="fontSize"
 							defaultValue={fontSize}
+							min="10"
 							onChange={(e) => changeFontSizeValue(e.target.value)}
 						/>
 						<span
@@ -44,6 +45,7 @@ export default class Form extends React.Component {
 							className={styles.formControlInput}
 							type="number"
 							name="lineHeight"
+							min={fontSize}
 							defaultValue={lineHeight}
 							onChange={(e) => changeLineHeightValue(e.target.value)}
 						/>
