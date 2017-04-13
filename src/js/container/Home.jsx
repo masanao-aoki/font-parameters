@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import FontLayer from './FontLayer'
 import Form from './Form'
 //action
-import { changeFirst, changeFontSize, changeLineHeight } from '../action/action'
+import { changeFirst, changeFontSize, changeLineHeight, changeTextArea } from '../action/action'
 //style
 import styles from '../../css/components/layout.css'
 
@@ -19,10 +19,11 @@ export class Home extends React.Component {
 			fontSize,
 			changeFontSizeValue,
 			changeLineHeightValue,
+			changeTextArea,
 			text
 		} = this.props
 
-		console.log(this.props)
+		// console.log(this.props)
 
 		return (
 			<div>
@@ -37,8 +38,10 @@ export class Home extends React.Component {
 				{...{
 					lineHeight,
 					fontSize,
+					text,
 					changeFontSizeValue,
-					changeLineHeightValue
+					changeLineHeightValue,
+					changeTextArea
 				}}></Form>
 			</div>
 		)
@@ -53,7 +56,8 @@ function mapDispatchToProps(dispatch) {
 	return {
 		changeValue: (event) => { dispatch(changeFirst(event)) },
 		changeFontSizeValue: (event) => { dispatch(changeFontSize(event)) },
-		changeLineHeightValue: (event) => { dispatch(changeLineHeight(event)) }
+		changeLineHeightValue: (event) => { dispatch(changeLineHeight(event)) },
+		changeTextArea: (event) => { dispatch(changeTextArea(event)) }
 	}
 }
 

@@ -26,7 +26,8 @@ export default class FontLayer extends React.Component {
 		const lineHeightStyle = {
 			height: `${lineHeightStyleValue}px`
 		}
-		
+
+		const textArrayLength = text.length;
 
 		return (
 			<div className={styles.layout}>
@@ -43,15 +44,20 @@ export default class FontLayer extends React.Component {
 								className={
 									`${styles.layoutTopLineHeight} ${styles.layoutLineHeight}`
 								}
-							>{num == 0 && <span className={styles.layoutLineHeightVal}>{lineHeightStyleValue}px</span>}</span>
-							
+							>
+								<span
+									className={styles.layoutLineHeightVal}
+								>{lineHeightStyleValue}px
+								</span>
+							</span>
+
 							{text}
 							<span
 								style={lineHeightStyle}
 								className={
 									`${styles.layoutBottomLineHeight} ${styles.layoutLineHeight}`
 								}
-							>{num == 0 && <span className={styles.layoutLineHeightVal}>{lineHeightStyleValue}px</span>}</span>
+							><span className={styles.layoutLineHeightVal}>{lineHeightStyleValue}px</span></span>
 						</p>
 					})}
 				</div>

@@ -14,11 +14,11 @@ export default class Form extends React.Component {
 		const {
 			lineHeight,
 			fontSize,
+			text,
 			changeFontSizeValue,
-			changeLineHeightValue
+			changeLineHeightValue,
+			changeTextArea
 		} = this.props
-
-		console.log(styles);
 
 		return (
 			<div className={styles.form}>
@@ -49,7 +49,11 @@ export default class Form extends React.Component {
 				<dl>
 					<dt>text</dt>
 					<dd>
-						<textarea defaultValue='aaaaaaa' />
+						<textarea
+							name="textArea"
+							defaultValue={text}
+							onChange={(e) => changeTextArea(e.target.value)}
+						/>
 					</dd>
 				</dl>
 			</div>

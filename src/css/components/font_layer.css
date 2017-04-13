@@ -16,20 +16,21 @@
 	box-sizing: border-box;
 }
 
-.layout-box .layoutInner {
+.layout-box .layout-inner {
+	display: inline;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 100%;
-	text-align: center;
+	text-align: left;
 	transform: translate(-50%,-50%);
+	white-space: nowrap;
+	border: .1rem dashed #ccc;
 }
 
 .layout-box .layout-text {
 	position: relative;
-	display: inline-block;
+	display: block;
 	width: auto;
-	background-color: #ccc;
 }
 
 .layout-box .layout-text .layout-line-height {
@@ -37,8 +38,15 @@
 	position: absolute;
 	left: 0;
 	width: 100%;
-	background: #a3a3a3;
 	font-size: 1.4rem !important;
+}
+
+.layout-box .layout-text:nth-child(odd) .layout-line-height {
+	background: #a3a3a3;
+}
+
+.layout-box .layout-text:nth-child(even) .layout-line-height {
+	background: #ccc;
 }
 
 .layout-box .layout-text .layout-top-line-height {
@@ -49,18 +57,32 @@
 	bottom: 0;
 }
 
-.layout-box .layout-text .layout-line-height .layout-line-height-val {
+.layout-box .layout-text:nth-child(odd) .layout-line-height .layout-line-height-val {
 	position: absolute;
 	top: 50%;
 	left: 104%;
 	transform: translate(0, -50%)
 }
 
-.layout-box .layout-text .layout-line-height .layout-line-height-val::before {
+.layout-box .layout-text:nth-child(odd) .layout-line-height .layout-line-height-val::before {
 	margin: 0 .5rem 0 0;
 	font-family: 'font-param';
 	content: '\f104';
 }
+
+.layout-box .layout-text:nth-child(even) .layout-line-height .layout-line-height-val {
+	position: absolute;
+	top: 50%;
+	right: 104%;
+	transform: translate(0, -50%)
+}
+
+.layout-box .layout-text:nth-child(even) .layout-line-height .layout-line-height-val::after {
+	margin: 0 0 0 .5rem;
+	font-family: 'font-param';
+	content: '\f105';
+}
+
 .layout-style {
 	overflow: hidden;
 	position: relative;
