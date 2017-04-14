@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, Link, browserHistory, hashhistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
 import * as reducers from './reducers'
-import { textToArray } from './middleware/convert'
+import { textToArray, test } from './middleware/convert'
 
 import App from './container/App'
 import Home from './container/Home'
@@ -19,7 +19,7 @@ const reducer = combineReducers({
 
 const store = createStore(
 	reducer,
-	applyMiddleware(textToArray)
+	applyMiddleware(textToArray, test)
 )
 
 const history = syncHistoryWithStore(browserHistory, store)

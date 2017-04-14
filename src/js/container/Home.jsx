@@ -55,7 +55,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		changeValue: (event) => { dispatch(changeFirst(event)) },
-		changeFontSizeValue: (event) => { dispatch(changeFontSize(event)) },
+		changeFontSizeValue: (event, lineHeight) => { dispatch(changeFontSize(event,lineHeight)) },
 		changeLineHeightValue: (event) => { dispatch(changeLineHeight(event)) },
 		changeTextArea: (event) => { dispatch(changeTextArea(event)) }
 	}

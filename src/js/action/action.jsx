@@ -14,16 +14,17 @@ export function changeLineHeight (lineHeight) {
 	}
 }
 
-export function changeFontSize (fontSize) {
+export function changeFontSize (fontSize,lineHeight) {
 	// console.log(fontSize)
 	return {
 		type: CHANGE_FONT_SIZE,
-		fontSize
+		fontSize,
+		lineHeight
 	}
 }
 
 export function changeTextArea(text) {
-	// console.log(text)
+	console.log(text)
 	return {
 		type: CHANGE_TEXT,
 		text

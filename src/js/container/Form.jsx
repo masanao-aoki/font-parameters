@@ -30,8 +30,9 @@ export default class Form extends React.Component {
 							type="number"
 							name="fontSize"
 							defaultValue={fontSize}
+							data-lineHeight={lineHeight}
 							min="10"
-							onChange={(e) => changeFontSizeValue(e.target.value)}
+							onChange={(e) => changeFontSizeValue(e.target.value, e.target.dataset.lineheight)}
 						/>
 						<span
 							className={styles.formControlUnit}
@@ -55,10 +56,14 @@ export default class Form extends React.Component {
 					</dd>
 				</dl>
 				<dl className={styles.formControl}>
-					<dt className={styles.formControlTitle}>text</dt>
-					<dd className={
-									`${styles.formControlBody} ${styles.formControlBodyNotFlex}`
-								}>
+					<dt
+						className={styles.formControlTitle}
+					>text</dt>
+					<dd
+						className={
+							`${styles.formControlBody} ${styles.formControlBodyNotFlex}`
+						}
+					>
 						<textarea
 							className={
 									`${styles.formControlInput} ${styles.formControlTextarea}`
@@ -67,7 +72,7 @@ export default class Form extends React.Component {
 							defaultValue={text}
 							onChange={(e) => changeTextArea(e.target.value)}
 						/>
-						<span className={styles.formControlAttention}>改行を行う場合は、テキスト入力枠内にて改行を行って下さい。</span>
+						<span className={styles.formControlAttention}>改行を行う場合は、テキスト入力枠内にて改行を行って下さい。また、文字が入力されていない行は無視されます。</span>
 					</dd>
 				</dl>
 			</div>
