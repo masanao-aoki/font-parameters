@@ -15,7 +15,7 @@ export default class Header extends React.Component {
 
         return (
             <header ref="header" className={header}>
-                <h1 className={styles.headerTitle}><a className="header-link" href="/">h1タイトル</a></h1>
+                <h1 className={styles.headerTitle}><a className="header-link" href="/">Line Height Checker</a></h1>
             </header>
         );
     }
