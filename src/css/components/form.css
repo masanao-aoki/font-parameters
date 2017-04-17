@@ -4,11 +4,13 @@
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 999;
 	height: 100%;
 	width: 20%;
 	padding: 2rem;
 	background: #f8f8f8;
 	box-sizing: border-box;
+	box-shadow: .1rem .1rem .4rem .1rem rgba(0,0,0,.1);
 }
 
 .form-control {
@@ -56,5 +58,6 @@
 	margin: .8rem 0 0 0;
 	color: #ce2828;
 	font-size: 1.2rem;
+	line-height: 1.25;
 }
 
