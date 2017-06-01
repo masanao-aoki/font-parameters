@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-var path = require('path')
-var port = 8888;
+var path = require('path');
+
+app.set('port', (process.env.PORT || 8888));
 
 app.use(express.static(__dirname + '/root'));
 
@@ -9,6 +10,6 @@ app.get('*', function (request, response){
 	response.sendFile(path.resolve(__dirname, 'root', 'index.html'))
 })
 
-app.listen(port,function(){
-	console.log(`Expressサーバー（localhost:${port}）を起動しました。`);
+app.listen(app.get('port'),function(){
+	console.log(`Expressサーバーを起動しました。`);
 });
