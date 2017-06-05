@@ -47832,9 +47832,12 @@
 			},
 			changeFontSizeValue: function changeFontSizeValue(event, lineHeight) {
 				dispatch((0, _action.changeFontSize)(event, lineHeight));
+				(0, _action.eventTracking)(event, lineHeight);
 			},
-			changeLineHeightValue: function changeLineHeightValue(event) {
-				dispatch((0, _action.changeLineHeight)(event));
+			changeLineHeightValue: function changeLineHeightValue(fontSize, event) {
+				console.log(fontSize);
+				dispatch((0, _action.changeLineHeight)(fontSize, event));
+				(0, _action.eventTracking)(fontSize, event);
 			},
 			changeTextArea: function changeTextArea(event) {
 				dispatch((0, _action.changeTextArea)(event));
@@ -48134,8 +48137,9 @@
 								name: 'lineHeight',
 								min: fontSize,
 								defaultValue: lineHeight,
+								'data-fontSize': fontSize,
 								onChange: function onChange(e) {
-									return changeLineHeightValue(e.target.value);
+									return changeLineHeightValue(e.target.dataset.fontsize, e.target.value);
 								}
 							}),
 							_react2.default.createElement(
@@ -48254,6 +48258,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	exports.eventTracking = eventTracking;
 	exports.changeLineHeight = changeLineHeight;
 	exports.changeFontSize = changeFontSize;
 	exports.changeTextArea = changeTextArea;
@@ -48262,7 +48267,23 @@
 	var CHANGE_FONT_SIZE = exports.CHANGE_FONT_SIZE = 'CHANGE_FONT_SIZE';
 	var CHANGE_TEXT = exports.CHANGE_TEXT = 'CHANGE_TEXT';
 
-	function changeLineHeight(lineHeight) {
+	var changingActionStatus = null;
+
+	function eventTracking(fontSize, lineHeight) {
+
+		if (changingActionStatus) {
+			clearTimeout(changingActionStatus);
+		}
+
+		changingActionStatus = setTimeout(function () {
+			ga('send', 'event', 'font-size', 'chenge', 'font-size', fontSize);
+			ga('send', 'event', 'lineHeight', 'chenge', 'lineHeight', lineHeight);
+			ga('send', 'event', 'fontSize-lineHeight', 'chenge', fontSize + '-' + lineHeight);
+			changingActionStatus = null;
+		}, 5000);
+	}
+
+	function changeLineHeight(fontSize, lineHeight) {
 		// console.log(lineHeight)
 		return {
 			type: CHANGE_LINE_HEIGHT,
