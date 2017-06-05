@@ -48,7 +48,8 @@ export default class Form extends React.Component {
 							name="lineHeight"
 							min={fontSize}
 							defaultValue={lineHeight}
-							onChange={(e) => changeLineHeightValue(e.target.value)}
+							data-fontSize={fontSize}
+							onChange={(e) => changeLineHeightValue(e.target.dataset.fontsize, e.target.value)}
 						/>
 						<span
 							className={styles.formControlUnit}

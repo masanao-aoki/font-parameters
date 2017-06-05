@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import FontLayer from './FontLayer'
 import Form from './Form'
 //action
-import { changeFirst, changeFontSize, changeLineHeight, changeTextArea } from '../action/action'
+import { changeFirst, changeFontSize, changeLineHeight, changeTextArea, eventTracking } from '../action/action'
 //style
 import styles from '../../css/components/layout.css'
 
@@ -55,8 +55,15 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
 	return {
 		changeValue: (event) => { dispatch(changeFirst(event)) },
-		changeFontSizeValue: (event, lineHeight) => { dispatch(changeFontSize(event,lineHeight)) },
-		changeLineHeightValue: (event) => { dispatch(changeLineHeight(event)) },
+		changeFontSizeValue: (event, lineHeight) => {
+			dispatch(changeFontSize(event, lineHeight))
+			eventTracking(event, lineHeight)
+		},
+		changeLineHeightValue: (fontSize, event) => {
+			console.log(fontSize);
+			dispatch(changeLineHeight(fontSize, event))
+			eventTracking(fontSize, event)
+		},
 		changeTextArea: (event) => { dispatch(changeTextArea(event)) }
 	}
 }
