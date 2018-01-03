@@ -1,6 +1,5 @@
 'use strict';
 
-
 export const CHANGE_LINE_HEIGHT = 'CHANGE_LINE_HEIGHT'
 export const CHANGE_FONT_SIZE = 'CHANGE_FONT_SIZE'
 export const CHANGE_TEXT = 'CHANGE_TEXT'
